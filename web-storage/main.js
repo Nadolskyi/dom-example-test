@@ -6,24 +6,24 @@ var bgcolorForm = document.getElementById('bgcolor');
 var fontForm = document.getElementById('font');
 var imageForm = document.getElementById('image');
 
-if(!localStorage.getItem('bgcolor')) {
+if(!sessionStorage.getItem('bgcolor')) {
   populateStorage();
 } else {
   setStyles();
 }
 
 function populateStorage() {
-  localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
-  localStorage.setItem('font', document.getElementById('font').value);
-  localStorage.setItem('image', document.getElementById('image').value);
+  sessionStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+  sessionStorage.setItem('font', document.getElementById('font').value);
+  sessionStorage.setItem('image', document.getElementById('image').value);
 
   setStyles();
 }
 
 function setStyles() {
-  var currentColor = localStorage.getItem('bgcolor');
-  var currentFont = localStorage.getItem('font');
-  var currentImage = localStorage.getItem('image');
+  var currentColor = sessionStorage.getItem('bgcolor');
+  var currentFont = sessionStorage.getItem('font');
+  var currentImage = sessionStorage.getItem('image');
 
   document.getElementById('bgcolor').value = currentColor;
   document.getElementById('font').value = currentFont;
